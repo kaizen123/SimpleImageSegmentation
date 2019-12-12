@@ -15,11 +15,14 @@ in the data set that includes the visual for the naked eye which was provided in
 
 ## Comparison
 
-
+I evaluated the results using **Recall, Precision and, 
+F-Measure**. Those three are well-known algorithms for image comparison.
+[For More About Algorithms](https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9)
 
 ## The Code
 
-**Main.m** - *Contains the Basic code with necessary comments*  
+**Main.m** - *Contains the Basic code with necessary comments. This will procee the Images and
+save the results in the Results folder*  
 **Ms.m** - *Contains Mean shift Algorithm You can change the Image name and test*
 
 
