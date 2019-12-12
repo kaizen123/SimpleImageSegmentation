@@ -27,7 +27,7 @@ clustering centers. And finally, repeat the above mentioned two steps until
 the cluster center no longer changes. The advantage of the K-means is fast 
 and simple, but the disadvantage is we should select the clusters manually.
 
-###Mean Shift
+### Mean Shift
 
 The disadvantage of the K-means is we should give the given clusters,
  but the mean shift algorithm is an algorithm that clusters data iteratively
