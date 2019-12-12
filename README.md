@@ -15,6 +15,6 @@ in the data set that includes the visual for the naked eye which was provided in
 
 ## The Code
 
-** Main.m ** - * Contains the Basic code with necessary comments*
-** Ms.m ** - * Contains Mean shift Algorithm *
+**Main.m** - *Contains the Basic code with necessary comments*
+**Ms.m** - *Contains Mean shift Algorithm*
 
