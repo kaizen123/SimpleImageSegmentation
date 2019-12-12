@@ -24,5 +24,6 @@ F-Measure**. Those three are well-known algorithms for image comparison.
 **Main.m** - *Contains the Basic code with necessary comments. This will procee the Images and
 save the results in the Results folder*  
 **Ms.m** - *Contains Mean shift Algorithm You can change the Image name and test*
-
+**Comparison.m** - *Contains the comparison between original image and the result images.
+Each pixels compares here. Recall Presions and F-Measure output given by them*
 
