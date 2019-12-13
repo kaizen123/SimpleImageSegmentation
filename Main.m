@@ -1,3 +1,6 @@
+close all;
+clear all;
+
 %read the images from the folder
 path = 'Images/';
 imName = '170057.jpg';
