@@ -1,6 +1,9 @@
 # Windows default autosave extension
 *.asv
 
+#Test files in local harddisk
+Untitled.m
+
 # OSX / *nix default autosave extension
 *.m~
 
