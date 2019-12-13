@@ -22,22 +22,24 @@ fn4 = 0;
 tn4 = 0;
 number = 0;
 
-%read the images from the folder
+%read the processed images from the folder
+
 path = 'Images/Results/';
-imName = '170057'; %Change Image Number here
+imNumber = '170057';
 
-str1=strcat(path,imName,'_real','.jpg');
-str2=strcat(path,imName,'_color','.jpg');
-str3=strcat(path,imName,'_brightness','.jpg');
-str4=strcat(path,imName,'_kmeans','.jpg');
-str5=strcat(path,imName,'_meanshift','.jpg');
+str1=strcat(path,imNumber,'_real','.jpg');
+str2=strcat(path,imNumber,'_color','.jpg');
+str3=strcat(path,imNumber,'_brightness','.jpg');
+str4=strcat(path,imNumber,'_kmeans','.jpg');
+str5=strcat(path,imNumber,'_meanshift','.jpg');
 
-
-I_prediction = (str1);
+I_prediction = imread(str1);
 I_1 = imread(str2);
 I_2 = imread(str3);
 I_3 = imread(str4);
 I_4 = imread(str5);
+
+
 
 I_pre_post = imadjust(I_prediction,[0.17 0.170000000001],[0 1]);
 [m,n,i] = size(I_pre_post);
@@ -71,14 +73,17 @@ figure,imshow(I_1_post);
 figure,imshow(I_2_post);
 figure,imshow(I_3_post);
 figure,imshow(I_4_post);
+
+% Compare each image pixel by pixel
+
 tic
-for d1 = 1:m
+for d = 1:m
     for r1 = 1:n
-     P_post = impixel(I_pre_post,d1,r1);
-     P_1 = impixel(I_1_post,d1,r1);
-     P_2 = impixel(I_2_post,d1,r1);
-     P_3 = impixel(I_3_post,d1,r1);
-     P_4 = impixel(I_4_post,d1,r1);
+     P_post = impixel(I_pre_post,d,r1);
+     P_1 = impixel(I_1_post,d,r1);
+     P_2 = impixel(I_2_post,d,r1);
+     P_3 = impixel(I_3_post,d,r1);
+     P_4 = impixel(I_4_post,d,r1);
      if (P_post == 255) & (P_1 == 255), tp1 = tp1+1;
      elseif (P_post == 255) & (P_1 == 0), fp1 = fp1+1;
          elseif (P_post == 0) & (P_1 == 255), fn1 = fn1+1;
@@ -103,10 +108,11 @@ for d1 = 1:m
              else tn4 = tn4+1;
      end
          number = number+1,fprintf('number='),disp(number);
-    end
+      
+     end
 end
 toc
-
+% Calculate Recall, Precision and F Measure by usin tp,tn,fp,fn
 Recall1 = tp1/(tp1+fn1);
 Precision1 = tp1/(tp1+fp1);
 F_measure1 = (2*Precision1*Recall1)/(Precision1+Recall1);
