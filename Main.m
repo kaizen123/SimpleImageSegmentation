@@ -1,7 +1,7 @@
 close all;
 clear all;
 
-%read the images from the folder
+%read the images from the folder to file
 path = 'Images/';
 imName = '170057.jpg';
 imHumanName = '170057_human.jpg';
